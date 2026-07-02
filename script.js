@@ -64,15 +64,49 @@ document.addEventListener('DOMContentLoaded', () => {
             mainSubtitle.innerText = "";
             plantContainer.style.cursor = 'default';
             
-            // Fade in the waitlist form after a short delay
             setTimeout(() => {
+                const bloomedLogo = document.querySelector('.bloomed-logo');
+                const formLogo = document.getElementById('form-logo');
+                
+                // Get starting bounds
+                const startBounds = bloomedLogo.getBoundingClientRect();
+                
+                // Create clone
+                const flyingLogo = document.createElement('img');
+                flyingLogo.src = 'logo.png';
+                flyingLogo.className = 'flying-logo';
+                flyingLogo.style.left = startBounds.left + 'px';
+                flyingLogo.style.top = startBounds.top + 'px';
+                flyingLogo.style.width = startBounds.width + 'px';
+                flyingLogo.style.height = startBounds.height + 'px';
+                document.body.appendChild(flyingLogo);
+
+                // Hide original plant container
                 plantContainer.style.opacity = '0';
+                
                 setTimeout(() => {
                     plantContainer.style.display = 'none';
                     waitlistCard.classList.remove('hidden');
                     waitlistCard.style.position = 'relative';
+                    
+                    // Wait for card to render to get target bounds
+                    setTimeout(() => {
+                        const targetBounds = formLogo.getBoundingClientRect();
+                        
+                        // Fly to target
+                        flyingLogo.style.left = targetBounds.left + 'px';
+                        flyingLogo.style.top = targetBounds.top + 'px';
+                        flyingLogo.style.width = targetBounds.width + 'px';
+                        flyingLogo.style.height = targetBounds.height + 'px';
+                        
+                        // After flight completes
+                        setTimeout(() => {
+                            formLogo.style.opacity = '1';
+                            flyingLogo.remove();
+                        }, 1200);
+                    }, 50);
                 }, 500);
-            }, 1500);
+            }, 1000);
         }
     });
 

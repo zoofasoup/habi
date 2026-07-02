@@ -279,6 +279,23 @@ body {
     position: absolute;
 }
 
+.form-logo {
+    width: 120px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    display: block;
+    filter: drop-shadow(0 10px 15px rgba(164, 206, 58, 0.2));
+    opacity: 0;
+}
+
+.flying-logo {
+    position: fixed;
+    z-index: 9999;
+    filter: drop-shadow(0 10px 15px rgba(164, 206, 58, 0.3));
+    transition: all 1.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
 /* Form Styles */
 .notify-form {
     position: relative;
