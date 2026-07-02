@@ -68,6 +68,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 const bloomedLogo = document.querySelector('.bloomed-logo');
                 const formLogo = document.getElementById('form-logo');
                 
+                // Stop the pulsing animation so we measure its exact unscaled size
+                bloomedLogo.style.animation = 'none';
+                bloomedLogo.style.transform = 'scale(1)';
+                
+                // Force a layout recalculation
+                bloomedLogo.offsetHeight;
+
                 // Get starting bounds before any layout changes
                 const startBounds = bloomedLogo.getBoundingClientRect();
                 
