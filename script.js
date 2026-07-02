@@ -54,13 +54,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById(`stage-${currentStage}`).classList.add('active');
 
         // Text updates
-        if (clicks === 2) mainSubtitle.innerText = "It's sprouting! Keep nurturing...";
-        if (clicks === 4) mainSubtitle.innerText = "Almost there, a little more water...";
+        if (clicks === 2) mainSubtitle.innerText = "Mulai bertunas! Terus sirami...";
+        if (clicks === 4) mainSubtitle.innerText = "Hampir mekar, sedikit air lagi...";
         
         // Bloom!
         if (clicks >= maxClicks) {
             isFullyGrown = true;
-            mainTitle.innerText = "It has bloomed.";
+            mainTitle.innerText = "Telah mekar.";
             mainSubtitle.innerText = "";
             plantContainer.style.cursor = 'default';
             
@@ -133,14 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ensure valid email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
-            errorMsg.innerText = 'Please enter a valid email address.';
+            errorMsg.innerText = 'Mohon masukkan alamat email yang valid.';
             errorMsg.style.display = 'block';
             return;
         }
         
         // Check if already registered
         if (localStorage.getItem('registered_email') === email) {
-            errorMsg.innerText = "You're already on the waitlist with this email!";
+            errorMsg.innerText = "Email ini sudah terdaftar di daftar tunggu!";
             errorMsg.style.display = 'block';
             return;
         }
@@ -149,7 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (email) {
             const btn = document.getElementById('notify-btn');
-            btn.innerText = 'Sending...';
+            btn.innerText = 'Mengirim...';
             btn.style.opacity = '0.8';
 
             const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSe6eTwVP-Al2e7_tS5odo-65FDy3Xrs166RZ-FCMUGSua0UdA/formResponse';
