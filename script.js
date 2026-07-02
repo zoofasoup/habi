@@ -80,10 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('notify-form');
     const inputGroup = document.querySelector('.input-group');
     const successMsg = document.getElementById('success-msg');
+    const errorMsg = document.getElementById('error-msg');
 
     form.addEventListener('submit', (e) => {
         e.preventDefault();
-        const email = document.getElementById('email-input').value;
+        const email = document.getElementById('email-input').value.trim();
+        
+        // Ensure valid email format
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+            errorMsg.style.display = 'block';
+            return;
+        }
+        
+        errorMsg.style.display = 'none';
         
         if (email) {
             const btn = document.getElementById('notify-btn');
