@@ -68,44 +68,47 @@ document.addEventListener('DOMContentLoaded', () => {
                 const bloomedLogo = document.querySelector('.bloomed-logo');
                 const formLogo = document.getElementById('form-logo');
                 
-                // Get starting bounds
+                // Get starting bounds before any layout changes
                 const startBounds = bloomedLogo.getBoundingClientRect();
                 
-                // Create clone
-                const flyingLogo = document.createElement('img');
-                flyingLogo.src = 'logo.png';
-                flyingLogo.className = 'flying-logo';
-                flyingLogo.style.left = startBounds.left + 'px';
-                flyingLogo.style.top = startBounds.top + 'px';
-                flyingLogo.style.width = startBounds.width + 'px';
-                flyingLogo.style.height = startBounds.height + 'px';
-                document.body.appendChild(flyingLogo);
-
-                // Hide original plant container
-                plantContainer.style.opacity = '0';
+                // Hide plant container softly using class (preserves its layout space in grid)
+                plantContainer.classList.add('hidden');
                 
-                setTimeout(() => {
-                    plantContainer.style.display = 'none';
-                    waitlistCard.classList.remove('hidden');
-                    waitlistCard.style.position = 'relative';
-                    
-                    // Wait for card to render to get target bounds
-                    setTimeout(() => {
+                // Show waitlist card so browser can calculate its layout instantly
+                waitlistCard.classList.remove('hidden');
+                
+                // Wait for the browser to render the now-visible grid
+                requestAnimationFrame(() => {
+                    requestAnimationFrame(() => {
                         const targetBounds = formLogo.getBoundingClientRect();
                         
+                        // Create clone
+                        const flyingLogo = document.createElement('img');
+                        flyingLogo.src = 'logo.png';
+                        flyingLogo.className = 'flying-logo';
+                        flyingLogo.style.left = startBounds.left + 'px';
+                        flyingLogo.style.top = startBounds.top + 'px';
+                        flyingLogo.style.width = startBounds.width + 'px';
+                        flyingLogo.style.height = startBounds.height + 'px';
+                        document.body.appendChild(flyingLogo);
+
+                        // Force reflow
+                        flyingLogo.offsetHeight;
+
                         // Fly to target
                         flyingLogo.style.left = targetBounds.left + 'px';
                         flyingLogo.style.top = targetBounds.top + 'px';
                         flyingLogo.style.width = targetBounds.width + 'px';
                         flyingLogo.style.height = targetBounds.height + 'px';
                         
-                        // After flight completes
+                        // Clean up after flight
                         setTimeout(() => {
                             formLogo.style.opacity = '1';
                             flyingLogo.remove();
+                            plantContainer.style.display = 'none'; // Finally remove from DOM flow
                         }, 1200);
-                    }, 50);
-                }, 500);
+                    });
+                });
             }, 1000);
         }
     });

@@ -80,9 +80,8 @@ body {
     width: 100%;
     max-width: 600px;
     padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    place-items: center;
 }
 
 .title {
@@ -113,7 +112,15 @@ body {
     flex-direction: column;
     align-items: center;
     cursor: pointer;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.interaction-area.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.95);
 }
 
 .pot-container {
@@ -270,13 +277,14 @@ body {
     text-align: center;
     width: 100%;
     transition: all 0.8s ease;
+    grid-column: 1;
+    grid-row: 1;
 }
 
 .glass-card.hidden {
     opacity: 0;
-    transform: translateY(40px);
     pointer-events: none;
-    position: absolute;
+    transform: scale(0.95);
 }
 
 .form-logo {
