@@ -89,6 +89,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Ensure valid email format
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailRegex.test(email)) {
+            errorMsg.innerText = 'Please enter a valid email address.';
+            errorMsg.style.display = 'block';
+            return;
+        }
+        
+        // Check if already registered
+        if (localStorage.getItem('registered_email') === email) {
+            errorMsg.innerText = "You're already on the waitlist with this email!";
             errorMsg.style.display = 'block';
             return;
         }
@@ -109,10 +117,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 mode: 'no-cors',
                 body: data
             }).then(() => {
+                localStorage.setItem('registered_email', email);
                 inputGroup.style.display = 'none';
                 successMsg.style.display = 'block';
             }).catch(err => {
                 // Even if it fails locally due to some strict browser plugin, we show success to not confuse users
+                localStorage.setItem('registered_email', email);
                 inputGroup.style.display = 'none';
                 successMsg.style.display = 'block';
             });
