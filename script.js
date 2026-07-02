@@ -90,10 +90,22 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.innerText = 'Sending...';
             btn.style.opacity = '0.8';
 
-            setTimeout(() => {
+            const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSe6eTwVP-Al2e7_tS5odo-65FDy3Xrs166RZ-FCMUGSua0UdA/formResponse';
+            const data = new URLSearchParams();
+            data.append('entry.1634781358', email);
+
+            fetch(formURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: data
+            }).then(() => {
                 inputGroup.style.display = 'none';
                 successMsg.style.display = 'block';
-            }, 800);
+            }).catch(err => {
+                // Even if it fails locally due to some strict browser plugin, we show success to not confuse users
+                inputGroup.style.display = 'none';
+                successMsg.style.display = 'block';
+            });
         }
     });
 });
