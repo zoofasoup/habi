@@ -346,8 +346,10 @@ button:active { transform: scale(0.98); }
 
 @media (max-width: 480px) {
     .title { font-size: 2.2rem; }
-    .input-group { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
-    .input-group:focus-within { box-shadow: none; transform: none; }
-    input { background: var(--white); border-radius: 30px; margin-bottom: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+    .glass-card { padding: 35px 20px; border-radius: 20px; }
+    .input-group { flex-direction: column; background: transparent; box-shadow: none; padding: 0; border: none; }
+    .input-group:focus-within { box-shadow: none; transform: none; border-color: transparent; }
+    input { background: var(--white); border-radius: 30px; margin-bottom: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border: 1px solid rgba(164, 206, 58, 0.3); }
+    input:focus { border-color: var(--primary-green); }
     button { width: 100%; }
 }
