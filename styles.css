@@ -120,7 +120,6 @@ body {
 .interaction-area.hidden {
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.95);
 }
 
 .pot-container {
@@ -284,7 +283,6 @@ body {
 .glass-card.hidden {
     opacity: 0;
     pointer-events: none;
-    transform: scale(0.95);
 }
 
 .form-logo {
