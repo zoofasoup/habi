@@ -2,6 +2,8 @@
     --primary-green: #a4ce3a;
     --dark-green: #7da328;
     --light-green: #e6f2c9;
+    --soil-color: #5c4b3a;
+    --pot-color: #d8b89d;
     --text-main: #2d3714;
     --text-muted: #5c6b36;
     --bg-color: #f7fbf0;
@@ -24,7 +26,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
-    touch-action: none; /* Prevent scrolling on mobile during game */
+    user-select: none;
 }
 
 /* Background Animations */
@@ -44,23 +46,23 @@ body {
     filter: blur(80px);
     z-index: 0;
     animation: float 20s infinite ease-in-out alternate;
-    opacity: 0.6;
+    opacity: 0.5;
 }
 
 .blob-1 {
-    width: 40vw;
-    height: 40vw;
+    width: 45vw;
+    height: 45vw;
     background: var(--primary-green);
     top: -10%;
-    left: -10%;
+    left: -15%;
     border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
 }
 
 .blob-2 {
-    width: 35vw;
-    height: 35vw;
+    width: 40vw;
+    height: 40vw;
     background: var(--light-green);
-    bottom: -10%;
+    bottom: -15%;
     right: -10%;
     border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
     animation-delay: -10s;
@@ -71,63 +73,194 @@ body {
     100% { transform: translate(100px, 50px) rotate(45deg); }
 }
 
-/* Game Container */
-#game-container {
+/* Main Container */
+.container {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 800px;
-    height: 100vh;
-    max-height: 800px;
+    max-width: 600px;
+    padding: 20px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-#game-canvas {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(5px);
-    cursor: none;
-}
-
-/* UI Layer */
-#ui-layer {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.5rem;
+.title {
+    font-size: 2.8rem;
     font-weight: 700;
-    color: var(--dark-green);
-    pointer-events: none;
-    text-shadow: 0 2px 4px rgba(255,255,255,0.8);
-    display: none; /* Hidden on start */
+    line-height: 1.1;
+    margin-bottom: 15px;
+    background: linear-gradient(135deg, var(--text-main), var(--dark-green));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
 }
 
-/* Screens */
-.screen {
-    display: none;
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    line-height: 1.6;
+    font-weight: 300;
+    text-align: center;
+    min-height: 25px;
+}
+
+/* Interaction Area */
+.interaction-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    transition: opacity 0.5s ease;
+}
+
+.pot-container {
     position: relative;
+    width: 200px;
+    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 30px;
+}
+
+/* Water Droplet Effect */
+.water-drop {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #74b9ff;
+    border-radius: 50% 50% 50% 5%;
+    transform: rotate(-45deg);
+    animation: dropFall 0.5s ease-in forwards;
+    pointer-events: none;
     z-index: 10;
-    width: 90%;
-    max-width: 500px;
 }
 
-.screen.active {
-    display: block;
+@keyframes dropFall {
+    0% { transform: translateY(-50px) rotate(-45deg); opacity: 1; }
+    100% { transform: translateY(50px) rotate(-45deg) scale(0.5); opacity: 0; }
 }
 
+/* The Pot */
+.pot {
+    width: 140px;
+    height: 100px;
+    background: linear-gradient(135deg, var(--pot-color), #c29c7c);
+    border-radius: 10px 10px 40px 40px;
+    position: relative;
+    z-index: 5;
+    box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+    border-top: 15px solid var(--soil-color);
+}
+
+/* Plant Stages */
+.plant-stage {
+    position: absolute;
+    bottom: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 150px;
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: all 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+    pointer-events: none;
+}
+
+.plant-stage.active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.seed {
+    width: 20px;
+    height: 12px;
+    background: #8b6b4a;
+    border-radius: 50%;
+    transform: translateY(10px);
+}
+
+.sprout {
+    width: 6px;
+    height: 40px;
+    background: var(--primary-green);
+    border-radius: 10px;
+    position: relative;
+}
+.sprout::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -10px;
+    width: 15px;
+    height: 15px;
+    background: var(--dark-green);
+    border-radius: 0 100% 0 100%;
+    transform: rotate(45deg);
+}
+
+.stem {
+    width: 8px;
+    height: 90px;
+    background: var(--primary-green);
+    border-radius: 10px;
+    position: relative;
+}
+.leaf {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: var(--primary-green);
+    border-radius: 0 100% 0 100%;
+}
+.leaf-left {
+    top: 20px;
+    left: -25px;
+    transform: rotate(-30deg);
+}
+.leaf-right {
+    top: 40px;
+    right: -25px;
+    transform: rotate(120deg);
+}
+
+.bloomed-logo {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 10px 15px rgba(164, 206, 58, 0.3));
+    animation: gentlePulse 3s infinite ease-in-out;
+}
+
+@keyframes gentlePulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Progress Bar */
+.progress-indicator {
+    width: 200px;
+    height: 6px;
+    background: rgba(164, 206, 58, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: var(--primary-green);
+    transition: width 0.5s ease;
+}
+
+/* Waitlist Card */
 .glass-card {
-    background: rgba(255, 255, 255, 0.75);
+    background: rgba(255, 255, 255, 0.7);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -135,54 +268,58 @@ body {
     padding: 50px 40px;
     box-shadow: 0 25px 50px -12px rgba(164, 206, 58, 0.15);
     text-align: center;
-    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    width: 100%;
+    transition: all 0.8s ease;
 }
 
-@keyframes slideUpFade {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-}
-
-.logo-container { margin-bottom: 30px; }
-.logo { max-width: 150px; height: auto; filter: drop-shadow(0 10px 15px rgba(164, 206, 58, 0.2)); }
-.title {
-    font-size: 2.5rem;
-    font-weight: 700;
-    line-height: 1.1;
-    margin-bottom: 15px;
-    background: linear-gradient(135deg, var(--text-main), var(--dark-green));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-.subtitle {
-    font-size: 1.1rem;
-    color: var(--text-muted);
-    margin-bottom: 30px;
-    line-height: 1.6;
-    font-weight: 400;
+.glass-card.hidden {
+    opacity: 0;
+    transform: translateY(40px);
+    pointer-events: none;
+    position: absolute;
 }
 
 /* Form Styles */
-.notify-form { margin-top: 20px; margin-bottom: 30px; }
+.notify-form {
+    position: relative;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
 .input-group {
     display: flex;
     background: var(--white);
-    padding: 6px;
+    padding: 8px;
     border-radius: 50px;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(164, 206, 58, 0.2);
     transition: all 0.3s ease;
 }
+
 .input-group:focus-within {
     box-shadow: 0 15px 35px -5px rgba(164, 206, 58, 0.2);
     border-color: var(--primary-green);
+    transform: translateY(-2px);
 }
-input { flex: 1; border: none; background: transparent; padding: 12px 20px; font-family: inherit; font-size: 1rem; color: var(--text-main); outline: none; }
+
+input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    padding: 15px 20px;
+    font-family: inherit;
+    font-size: 1rem;
+    color: var(--text-main);
+    outline: none;
+}
+
+input::placeholder { color: #aeb896; }
+
 button {
     background: var(--primary-green);
     color: var(--white);
     border: none;
-    padding: 12px 25px;
+    padding: 15px 30px;
     border-radius: 40px;
     font-family: inherit;
     font-size: 1rem;
@@ -190,19 +327,27 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
 }
+
 button:hover { background: var(--dark-green); transform: scale(1.02); }
-#start-btn, #restart-btn { font-size: 1.2rem; padding: 15px 40px; }
+button:active { transform: scale(0.98); }
 
 .success-message {
     display: none;
     color: var(--dark-green);
     font-weight: 600;
     margin-top: 15px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 480px) {
-    .title { font-size: 2rem; }
-    .input-group { flex-direction: column; background: transparent; box-shadow: none; padding: 0; border: none; }
+    .title { font-size: 2.2rem; }
+    .input-group { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
+    .input-group:focus-within { box-shadow: none; transform: none; }
     input { background: var(--white); border-radius: 30px; margin-bottom: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
     button { width: 100%; }
 }

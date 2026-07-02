@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Habi Herbal Alam - Coming Soon</title>
+    <title>Habi Herbal Alam - Nurturing Nature</title>
     <link rel="icon" type="image/png" href="favicon.png">
-    <meta name="description" content="Habi Herbal Alam is coming soon. Get ready for fresh, natural herbal products.">
+    <meta name="description" content="Habi Herbal Alam is growing. Nurture the plant to join our waitlist.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
@@ -17,48 +17,52 @@
         <div class="blob blob-2"></div>
     </div>
     
-    <div id="game-container">
-        <!-- Game Canvas -->
-        <canvas id="game-canvas"></canvas>
+    <main class="container">
         
-        <!-- UI Overlay -->
-        <div id="ui-layer">
-            <div id="score-display">Score: <span id="score">0</span></div>
-            <div id="lives-display">Lives: <span id="lives">3</span></div>
-        </div>
-        
-        <!-- Start Screen -->
-        <div id="start-screen" class="glass-card screen active">
-            <div class="logo-container">
-                <img src="logo.png" alt="Habi Herbal Alam Logo" class="logo">
-            </div>
-            <h1 class="title">Nature's Catch</h1>
-            <p class="subtitle">Catch the fresh herbs, avoid the rocks! Get 50 points to unlock our secret waitlist.</p>
-            <button id="start-btn">Play Game</button>
-        </div>
-
-        <!-- Game Over Screen -->
-        <div id="game-over-screen" class="glass-card screen">
-            <h2 class="title" id="end-title">Game Over</h2>
-            <p class="subtitle" id="end-subtitle">You scored <span id="final-score">0</span> points.</p>
+        <!-- Interactive Plant Area -->
+        <div class="interaction-area" id="plant-container">
+            <h1 class="title" id="main-title">Nurture to Grow</h1>
+            <p class="subtitle" id="main-subtitle">Click to water the seed and watch it bloom.</p>
             
-            <div id="waitlist-section" style="display: none;">
-                <p class="subtitle">You unlocked the waitlist! Be the first to know when we launch.</p>
-                <form class="notify-form" id="notify-form">
-                    <div class="input-group">
-                        <input type="email" id="email-input" placeholder="Enter your email address" required>
-                        <button type="submit" id="notify-btn">Notify Me</button>
+            <div class="pot-container">
+                <div class="plant-stage stage-0 active" id="stage-0">
+                    <div class="seed"></div>
+                </div>
+                <div class="plant-stage stage-1" id="stage-1">
+                    <div class="sprout"></div>
+                </div>
+                <div class="plant-stage stage-2" id="stage-2">
+                    <div class="stem">
+                        <div class="leaf leaf-left"></div>
+                        <div class="leaf leaf-right"></div>
                     </div>
-                    <p class="success-message" id="success-msg">Thanks! We'll keep you updated.</p>
-                </form>
+                </div>
+                <div class="plant-stage stage-3" id="stage-3">
+                    <img src="logo.png" alt="Habi Blooming" class="bloomed-logo">
+                </div>
+                <div class="pot"></div>
             </div>
             
-            <button id="restart-btn">Play Again</button>
+            <div class="progress-indicator">
+                <div class="progress-bar" id="progress-bar"></div>
+            </div>
         </div>
-    </div>
 
-    <!-- Hidden image for canvas drawing -->
-    <img src="logo.png" id="logo-img" style="display: none;">
+        <!-- Waitlist Form (Hidden Initially) -->
+        <div class="glass-card hidden" id="waitlist-card">
+            <h2 class="title">Nature's Touch</h2>
+            <p class="subtitle">Thank you for nurturing our growth. Join the waitlist to be the first to experience Habi Herbal Alam.</p>
+            
+            <form class="notify-form" id="notify-form">
+                <div class="input-group">
+                    <input type="email" id="email-input" placeholder="Enter your email address" required>
+                    <button type="submit" id="notify-btn">Notify Me</button>
+                </div>
+                <p class="success-message" id="success-msg">Thanks! We'll keep you updated on our launch.</p>
+            </form>
+        </div>
+        
+    </main>
 
     <script src="script.js"></script>
 </body>
