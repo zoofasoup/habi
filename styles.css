@@ -24,6 +24,7 @@ body {
     align-items: center;
     overflow: hidden;
     position: relative;
+    touch-action: none; /* Prevent scrolling on mobile during game */
 }
 
 /* Background Animations */
@@ -35,6 +36,7 @@ body {
     height: 100%;
     z-index: 0;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .blob {
@@ -69,17 +71,63 @@ body {
     100% { transform: translate(100px, 50px) rotate(45deg); }
 }
 
-/* Main Container */
-.container {
+/* Game Container */
+#game-container {
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 600px;
-    padding: 20px;
+    max-width: 800px;
+    height: 100vh;
+    max-height: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    background: rgba(255, 255, 255, 0.4);
+    backdrop-filter: blur(5px);
+    cursor: none;
+}
+
+/* UI Layer */
+#ui-layer {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--dark-green);
+    pointer-events: none;
+    text-shadow: 0 2px 4px rgba(255,255,255,0.8);
+    display: none; /* Hidden on start */
+}
+
+/* Screens */
+.screen {
+    display: none;
+    position: relative;
+    z-index: 10;
+    width: 90%;
+    max-width: 500px;
+}
+
+.screen.active {
+    display: block;
 }
 
 .glass-card {
-    background: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -87,94 +135,54 @@ body {
     padding: 50px 40px;
     box-shadow: 0 25px 50px -12px rgba(164, 206, 58, 0.15);
     text-align: center;
-    transform: translateY(20px);
-    opacity: 0;
-    animation: slideUpFade 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 @keyframes slideUpFade {
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
-.logo-container {
-    margin-bottom: 30px;
-}
-
-.logo {
-    max-width: 180px;
-    height: auto;
-    filter: drop-shadow(0 10px 15px rgba(164, 206, 58, 0.2));
-    transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.logo:hover {
-    transform: scale(1.05) rotate(-2deg);
-}
-
+.logo-container { margin-bottom: 30px; }
+.logo { max-width: 150px; height: auto; filter: drop-shadow(0 10px 15px rgba(164, 206, 58, 0.2)); }
 .title {
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.1;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     background: linear-gradient(135deg, var(--text-main), var(--dark-green));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
 .subtitle {
     font-size: 1.1rem;
     color: var(--text-muted);
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     line-height: 1.6;
-    font-weight: 300;
+    font-weight: 400;
 }
 
 /* Form Styles */
-.notify-form {
-    position: relative;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
+.notify-form { margin-top: 20px; margin-bottom: 30px; }
 .input-group {
     display: flex;
     background: var(--white);
-    padding: 8px;
+    padding: 6px;
     border-radius: 50px;
     box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
     border: 1px solid rgba(164, 206, 58, 0.2);
     transition: all 0.3s ease;
 }
-
 .input-group:focus-within {
     box-shadow: 0 15px 35px -5px rgba(164, 206, 58, 0.2);
     border-color: var(--primary-green);
-    transform: translateY(-2px);
 }
-
-input {
-    flex: 1;
-    border: none;
-    background: transparent;
-    padding: 15px 20px;
-    font-family: inherit;
-    font-size: 1rem;
-    color: var(--text-main);
-    outline: none;
-}
-
-input::placeholder {
-    color: #aeb896;
-}
-
+input { flex: 1; border: none; background: transparent; padding: 12px 20px; font-family: inherit; font-size: 1rem; color: var(--text-main); outline: none; }
 button {
     background: var(--primary-green);
     color: var(--white);
     border: none;
-    padding: 15px 30px;
+    padding: 12px 25px;
     border-radius: 40px;
     font-family: inherit;
     font-size: 1rem;
@@ -182,33 +190,19 @@ button {
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
-button:hover {
-    background: var(--dark-green);
-    transform: scale(1.02);
-}
-
-button:active {
-    transform: scale(0.98);
-}
+button:hover { background: var(--dark-green); transform: scale(1.02); }
+#start-btn, #restart-btn { font-size: 1.2rem; padding: 15px 40px; }
 
 .success-message {
     display: none;
     color: var(--dark-green);
     font-weight: 600;
     margin-top: 15px;
-    animation: fadeIn 0.5s ease forwards;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(-10px); }
-    to { opacity: 1; transform: translateY(0); }
 }
 
 @media (max-width: 480px) {
-    .title { font-size: 2.2rem; }
-    .input-group { flex-direction: column; background: transparent; box-shadow: none; padding: 0; }
-    .input-group:focus-within { box-shadow: none; transform: none; }
+    .title { font-size: 2rem; }
+    .input-group { flex-direction: column; background: transparent; box-shadow: none; padding: 0; border: none; }
     input { background: var(--white); border-radius: 30px; margin-bottom: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
     button { width: 100%; }
 }
