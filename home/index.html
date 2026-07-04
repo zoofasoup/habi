@@ -32,12 +32,12 @@
   <!-- Open Graph -->
   <meta property="og:title" content="Habi Herbal Alam — Tetes Habbatussauda &amp; Zaitun untuk Daya Tahan Tubuh Keluarga">
   <meta property="og:description" content="Habi Herbal Alam, tetes herbal habbatussauda &amp; zaitun extra virgin 30 ml. Halal, BPOM. Memelihara daya tahan tubuh seluruh keluarga.">
-  <meta property="og:image" content="https://habi.co.id/images/bottle-hero.png">
+  <meta property="og:image" content="https://habi.co.id/images/bottle.webp">
   <meta property="og:url" content="https://habi.co.id">
   <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" type="image/webp" href="images/favicon.webp">
 
   <!-- Google Fonts: Space Grotesk -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -58,7 +58,7 @@
   <nav id="main-nav" class="nav">
     <div class="container nav__inner">
       <a href="#hero" class="nav__logo">
-        <img src="images/logo.png" alt="Habi Herbal Alam" width="120" height="40">
+        <img src="images/logo.webp" alt="Habi Herbal Alam" width="120" height="40">
       </a>
 
       <ul class="nav__links">
@@ -97,27 +97,47 @@
   <!-- ============================================
        2. HERO
        ============================================ -->
-  <section id="hero" class="hero">
-    <div class="container hero__inner">
-      <div class="hero__content">
-        <h1>Tetes Herbal untuk<br>Seluruh Keluarga</h1>
-        <p class="hero__subtitle">Kombinasi habbatussauda &amp; zaitun extra virgin dalam format tetes yang mudah dikonsumsi. Membantu memelihara daya tahan tubuh dan meredakan batuk untuk dewasa &amp; anak.</p>
-        <div class="hero__trust">
-          <span>🌿 100% Herbal Alam</span>
-          <span>☪ Halal MUI</span>
-          <span>✓ BPOM Terdaftar</span>
-        </div>
-        <p class="hero__price">Mulai <strong>Rp 180.000</strong></p>
-        <div class="hero__ctas">
-          <a href="#beli" class="btn btn--primary btn--lg">Beli Sekarang</a>
-          <a href="#produk" class="btn btn--secondary btn--lg">Lihat Produk</a>
+  <section id="hero" class="hero" style="background-image: url('images/hero_bg.webp'); background-size: cover; background-position: center; position: relative;">
+    <div class="hero__overlay" style="position: absolute; inset: 0; background: rgba(0, 0, 0, 0.4);"></div>
+    <div class="container hero__inner" style="position: relative; z-index: 1;">
+      <div class="hero__glass" style="background: rgba(255, 255, 255, 0.1); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 2rem; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.2);">
+        <div class="hero__content">
+          <h1 style="color: #fff; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">Tetes Herbal untuk<br>Seluruh Keluarga</h1>
+          <p class="hero__subtitle" style="color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.5);">Kombinasi habbatussauda &amp; zaitun extra virgin dalam format tetes yang mudah dikonsumsi. Membantu memelihara daya tahan tubuh dan meredakan batuk untuk dewasa &amp; anak.</p>
+          <div class="hero__trust" style="color: #fff;">
+            <span>🌿 100% Herbal Alam</span>
+            <span>☪ Halal MUI</span>
+            <span>✓ BPOM Terdaftar</span>
+          </div>
+          <p class="hero__price" style="color: #fff;">Mulai <strong>Rp 180.000</strong></p>
+          <div class="hero__ctas">
+            <a href="#beli" class="btn btn--primary btn--lg" style="box-shadow: 0 4px 15px rgba(0,0,0,0.2);">Beli Sekarang</a>
+            <a href="#produk" class="btn btn--secondary btn--lg" style="background: rgba(255,255,255,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.5);">Lihat Produk</a>
+          </div>
         </div>
       </div>
       <div class="hero__image">
-        <img src="images/bottle-hero.png" alt="Habi Herbal Alam 30ml" width="400" height="600">
+        <img src="images/extracted_0.webp" alt="Habi Herbal Alam 30ml" width="400" height="600" style="filter: drop-shadow(0 20px 30px rgba(0,0,0,0.3));">
       </div>
     </div>
   </section>
+
+  <!-- ============================================
+       2.5 URGENCY / TRUST PARALLAX
+       ============================================ -->
+  <div class="urgency-bar" style="background: linear-gradient(90deg, #1A1A1A, #333333); color: #fff; padding: 12px 0; overflow: hidden; position: relative; z-index: 2; box-shadow: 0 4px 10px rgba(0,0,0,0.2);">
+    <div class="container" style="display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 1rem; font-weight: 600; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px;">
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.2rem;">🔥</span> 128 orang memesan minggu ini
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.2rem;">⏳</span> Stok tersisa 47 botol
+      </div>
+      <div style="display: flex; align-items: center; gap: 8px;">
+        <span style="font-size: 1.2rem;">🚚</span> Gratis ongkir
+      </div>
+    </div>
+  </div>
 
   <!-- ============================================
        3. TRUST BAR
@@ -148,32 +168,32 @@
       <p class="section__subtitle">Habi cocok untuk seluruh anggota keluarga yang ingin menjaga kesehatan secara alami.</p>
 
       <div class="audience-grid">
-        <div class="audience-card" tabindex="0" role="button">
-          <span class="audience-card__icon">💪</span>
+        <div class="audience-card" tabindex="0" role="button" style="text-align: center;">
+          <img src="images/mascot_stamina_1782298829405.png" alt="Stamina" width="80" height="80" style="margin-bottom: 1rem;">
           <h3 class="audience-card__title">Butuh Stamina Lebih</h3>
           <p class="audience-card__desc">Untuk Anda yang aktif dan butuh energi ekstra setiap hari.</p>
         </div>
 
-        <div class="audience-card" tabindex="0" role="button">
-          <span class="audience-card__icon">✈️</span>
+        <div class="audience-card" tabindex="0" role="button" style="text-align: center;">
+          <img src="images/mascot_travel_1782298840425.png" alt="Sering Bepergian" width="80" height="80" style="margin-bottom: 1rem;">
           <h3 class="audience-card__title">Sering Bepergian</h3>
           <p class="audience-card__desc">Jaga daya tahan tubuh saat mobilitas tinggi dan perubahan cuaca.</p>
         </div>
 
-        <div class="audience-card" tabindex="0" role="button">
-          <span class="audience-card__icon">🧒</span>
+        <div class="audience-card" tabindex="0" role="button" style="text-align: center;">
+          <img src="images/mascot_kids_1782298851549.png" alt="Anak Rentan Batuk Pilek" width="80" height="80" style="margin-bottom: 1rem;">
           <h3 class="audience-card__title">Anak Rentan Batuk Pilek</h3>
           <p class="audience-card__desc">Format tetes mudah dicampur madu, cocok untuk anak usia 2 tahun ke atas.</p>
         </div>
 
-        <div class="audience-card" tabindex="0" role="button">
-          <span class="audience-card__icon">🏭</span>
+        <div class="audience-card" tabindex="0" role="button" style="text-align: center;">
+          <img src="images/mascot_pollution_1782298862373.png" alt="Terpapar Polusi" width="80" height="80" style="margin-bottom: 1rem;">
           <h3 class="audience-card__title">Terpapar Polusi</h3>
           <p class="audience-card__desc">Bantu lindungi saluran pernapasan dari paparan polusi sehari-hari.</p>
         </div>
 
-        <div class="audience-card" tabindex="0" role="button">
-          <span class="audience-card__icon">🗣️</span>
+        <div class="audience-card" tabindex="0" role="button" style="text-align: center;">
+          <img src="images/mascot_throat_1782298873448.png" alt="Tenggorokan Tidak Nyaman" width="80" height="80" style="margin-bottom: 1rem;">
           <h3 class="audience-card__title">Tenggorokan Tidak Nyaman</h3>
           <p class="audience-card__desc">Meredakan rasa tidak nyaman di tenggorokan secara alami.</p>
         </div>
@@ -237,7 +257,7 @@
           <h3 class="pricing-card__title">1 Botol</h3>
           <p class="pricing-card__label">Coba Dulu</p>
           <div class="pricing-card__image">
-            <img src="images/bottle-hero.png" alt="Habi Herbal Alam 1 Botol" width="120" height="180" loading="lazy">
+            <img src="images/bottle.webp" alt="Habi Herbal Alam 1 Botol" width="120" height="180" loading="lazy">
           </div>
           <p class="pricing-card__qty">Isi 30 ml</p>
           <p class="pricing-card__price">Rp 180.000</p>
@@ -250,7 +270,7 @@
           <h3 class="pricing-card__title">3 Botol</h3>
           <p class="pricing-card__label">Stok 1 Bulan Keluarga</p>
           <div class="pricing-card__image">
-            <img src="images/bottle-hero.png" alt="Habi Herbal Alam 3 Botol" width="120" height="180" loading="lazy">
+            <img src="images/bottle.webp" alt="Habi Herbal Alam 3 Botol" width="120" height="180" loading="lazy">
           </div>
           <p class="pricing-card__qty">Isi 30 ml × 3</p>
           <p class="pricing-card__price">Rp 480.000</p>
@@ -263,7 +283,7 @@
           <h3 class="pricing-card__title">6 Botol</h3>
           <p class="pricing-card__label">Hemat Maksimal</p>
           <div class="pricing-card__image">
-            <img src="images/bottle-hero.png" alt="Habi Herbal Alam 6 Botol" width="120" height="180" loading="lazy">
+            <img src="images/bottle.webp" alt="Habi Herbal Alam 6 Botol" width="120" height="180" loading="lazy">
           </div>
           <p class="pricing-card__qty">Isi 30 ml × 6</p>
           <p class="pricing-card__price">Rp 900.000</p>
@@ -282,23 +302,39 @@
     <div class="container">
       <h2 class="section__title">Komposisi Alami</h2>
 
-      <div class="ingredient-grid">
-        <div class="ingredient-card">
-          <h3 class="ingredient-card__title">Habbatussauda (Jintan Hitam)</h3>
-          <button class="ingredient-card__toggle" aria-expanded="false">Selengkapnya</button>
-          <div class="ingredient-card__detail">
-            <p>Mengandung thymoquinone, senyawa aktif yang membantu memelihara daya tahan tubuh. Dikenal dalam tradisi pengobatan herbal selama berabad-abad.</p>
+      <div class="ingredient-grid" style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap;">
+        <!-- Flip Card 1 -->
+        <div class="flip-card" style="background-color: transparent; width: 300px; height: 350px; perspective: 1000px; cursor: pointer;">
+          <div class="flip-card-inner" style="position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div class="flip-card-front" style="position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; background-color: #fff; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; border: 1px solid #eee;">
+              <img src="images/black_seed_oil.png" alt="Habbatussauda" width="120" height="120" style="object-fit: contain; margin-bottom: 1rem;">
+              <h3 style="margin: 0; font-size: 1.25rem;">Habbatussauda</h3>
+              <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">(Jintan Hitam)</p>
+            </div>
+            <div class="flip-card-back" style="position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; background-color: #2F6955; color: white; transform: rotateY(180deg); border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+              <p style="margin: 0; line-height: 1.6;">Mengandung thymoquinone, senyawa aktif yang membantu memelihara daya tahan tubuh. Dikenal dalam tradisi pengobatan herbal selama berabad-abad.</p>
+            </div>
           </div>
         </div>
 
-        <div class="ingredient-card">
-          <h3 class="ingredient-card__title">Zaitun Extra Virgin</h3>
-          <button class="ingredient-card__toggle" aria-expanded="false">Selengkapnya</button>
-          <div class="ingredient-card__detail">
-            <p>Kaya antioksidan dan asam lemak esensial. Membantu mendukung kesehatan secara menyeluruh dan meningkatkan penyerapan nutrisi.</p>
+        <!-- Flip Card 2 -->
+        <div class="flip-card" style="background-color: transparent; width: 300px; height: 350px; perspective: 1000px; cursor: pointer;">
+          <div class="flip-card-inner" style="position: relative; width: 100%; height: 100%; text-align: center; transition: transform 0.6s; transform-style: preserve-3d; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+            <div class="flip-card-front" style="position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; background-color: #fff; border-radius: 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 1.5rem; border: 1px solid #eee;">
+              <img src="images/olive_oil.png" alt="Zaitun Extra Virgin" width="120" height="120" style="object-fit: contain; margin-bottom: 1rem;">
+              <h3 style="margin: 0; font-size: 1.25rem;">Zaitun Extra Virgin</h3>
+            </div>
+            <div class="flip-card-back" style="position: absolute; width: 100%; height: 100%; -webkit-backface-visibility: hidden; backface-visibility: hidden; background-color: #2F6955; color: white; transform: rotateY(180deg); border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 2rem;">
+              <p style="margin: 0; line-height: 1.6;">Kaya antioksidan dan asam lemak esensial. Membantu mendukung kesehatan secara menyeluruh dan meningkatkan penyerapan nutrisi.</p>
+            </div>
           </div>
         </div>
       </div>
+      <style>
+        .flip-card:hover .flip-card-inner {
+          transform: rotateY(180deg);
+        }
+      </style>
     </div>
   </section>
 
@@ -562,9 +598,12 @@
     <div class="container footer__inner">
       <div class="footer__col">
         <a href="#hero" class="footer__logo">
-          <img src="images/logo.png" alt="Habi Herbal Alam" width="120" height="40" loading="lazy">
+          <img src="images/logo.webp" alt="Habi Herbal Alam" width="120" height="40" loading="lazy">
         </a>
         <p class="footer__desc">Habi Herbal Alam — tetes herbal habbatussauda &amp; zaitun extra virgin untuk kesehatan keluarga Indonesia.</p>
+        <div style="margin-top: 1.5rem;">
+          <img src="images/extracted_1.webp" alt="Habi Herbal" width="160" style="border-radius: 8px; opacity: 0.9; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        </div>
       </div>
 
       <div class="footer__col">

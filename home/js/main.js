@@ -117,19 +117,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   /* -----------------------------------------------------------------------
-     5. Ingredient Card Expand
+     5. Ingredient Card Expand (Removed, handled by CSS hover/focus flip)
      ----------------------------------------------------------------------- */
-  document.addEventListener('click', (e) => {
-    const toggle = e.target.closest('.ingredient-card__toggle');
-    if (!toggle) return;
-
-    const detail = toggle.parentElement && toggle.parentElement.querySelector('.ingredient-card__detail');
-    if (!detail) return;
-
-    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!isExpanded));
-    detail.classList.toggle('open', !isExpanded);
-  });
 
 
   /* -----------------------------------------------------------------------

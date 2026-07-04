@@ -119,8 +119,8 @@ button {
 
 .btn--primary:hover {
   background-color: #6FA030;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(141, 198, 63, 0.35);
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(141, 198, 63, 0.4);
 }
 
 .btn--secondary {
@@ -275,6 +275,22 @@ button {
 .hero {
   padding-top: 100px;
   padding-bottom: 60px;
+  background-image: url('../img/hero_bg.webp');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.hero__glass {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 24px;
+  padding: 40px 24px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .hero__inner {
@@ -387,10 +403,17 @@ button {
 
 /* ----- Trust Bar ----- */
 .trust-bar {
-  background-color: #FFFFFF;
-  padding: 24px 0;
-  border-top: 1px solid rgba(141, 198, 63, 0.15);
-  border-bottom: 1px solid rgba(141, 198, 63, 0.15);
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 20px 0;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  border-radius: 16px;
+  max-width: 1000px;
+  margin: -40px auto 40px; /* Floating over the section transition */
+  position: relative;
+  z-index: 10;
 }
 
 .trust-bar__inner {
@@ -437,11 +460,25 @@ button {
   border: 2px solid transparent;
 }
 
+.audience-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  margin-bottom: 20px;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.audience-card:hover img,
+.audience-card:focus-within img {
+  transform: scale(1.08) translateY(-4px);
+}
+
 .audience-card:hover,
 .audience-card:focus-within {
   border-color: #8DC63F;
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(26, 41, 8, 0.12);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(26, 41, 8, 0.15);
 }
 
 .audience-card__icon {
@@ -572,8 +609,8 @@ button {
 }
 
 .pricing-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(26, 41, 8, 0.12);
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(26, 41, 8, 0.15);
 }
 
 .pricing-card--popular {
@@ -659,10 +696,47 @@ button {
 }
 
 .ingredient-card {
+  perspective: 1000px;
+  background-color: transparent;
+  min-height: 300px;
+}
+
+.ingredient-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.ingredient-card:hover .ingredient-card__inner,
+.ingredient-card:focus-within .ingredient-card__inner {
+  transform: rotateY(180deg);
+}
+
+.ingredient-card__front,
+.ingredient-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
   background-color: #FFFFFF;
   border-radius: 20px;
   padding: 32px;
   box-shadow: 0 4px 20px rgba(26, 41, 8, 0.08);
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-card__back {
+  transform: rotateY(180deg);
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #F5F2E9 0%, #FFFFFF 100%);
 }
 
 .ingredient-card__title {
@@ -943,8 +1017,8 @@ button {
 
 .buy-btn:hover {
   border-color: #8DC63F;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(26, 41, 8, 0.12);
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 36px rgba(26, 41, 8, 0.15);
 }
 
 .buy-btn svg {
