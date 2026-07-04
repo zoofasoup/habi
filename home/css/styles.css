@@ -71,7 +71,7 @@ nav.stuck{}
 .nav-links a:hover{opacity:1}
 
 /* ── HERO ── */
-#hero{min-height:80vh;background:linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%), url('../images/hero-mountain.webp') center/cover no-repeat;background-attachment:fixed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 20px 40px;position:relative;overflow:hidden}
+#hero{min-height:80vh;background:linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.6) 100%), url('../images/hero_bg.webp') center/cover no-repeat;background-attachment:fixed;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 20px 40px;position:relative;overflow:hidden}
 .hero-content{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;width:100%;max-width:800px;height:100%;justify-content:center}
 
 
