@@ -510,43 +510,6 @@ footer{background:var(--dark);padding:60px 80px 36px}
   .hamburger { display: flex; }
 }
 
-#trust-parallax {
-  background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.8)), url('../images/hero_nature_bg.png') center/cover no-repeat;
-  background-attachment: fixed;
-  padding: 40px 0;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-#trust {
-  width: 100%;
-  background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(255,255,255,1);
-  border-bottom: 1px solid rgba(255,255,255,1);
-  padding: 32px 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-.glass-card {
-  /* remove constraints since #trust handles the glass now */
-  background: transparent;
-  border: none;
-  box-shadow: none;
-  padding: 0;
-}
-@media (max-width: 900px) {
-  .tr.glass-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .ti-div {
-    width: 100%;
-    height: 1px;
-    margin: 8px 0;
-  }
-}
-
 body.no-scroll { overflow: hidden !important; touch-action: none; }
 .nav-logo-bg {
   background: rgba(255,255,255,0.15);
