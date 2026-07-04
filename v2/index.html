@@ -1,0 +1,733 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '{{META_PIXEL_ID}}');
+  fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={{META_PIXEL_ID}}&ev=PageView&noscript=1"/></noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{GA4_ID}}"></script>
+  <script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{GA4_ID}}');
+  </script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Habi Herbal Alam — Tetes Habbatussauda &amp; Zaitun untuk Daya Tahan Tubuh Keluarga</title>
+  <meta name="description" content="Habi Herbal Alam, tetes herbal habbatussauda &amp; zaitun extra virgin 30 ml. Halal, BPOM. Memelihara daya tahan tubuh seluruh keluarga.">
+  <link rel="canonical" href="https://habi.co.id">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Habi Herbal Alam — Tetes Habbatussauda &amp; Zaitun untuk Daya Tahan Tubuh Keluarga">
+  <meta property="og:description" content="Habi Herbal Alam, tetes herbal habbatussauda &amp; zaitun extra virgin 30 ml. Halal, BPOM. Memelihara daya tahan tubuh seluruh keluarga.">
+  <meta property="og:image" content="https://habi.co.id/images/bottle-hero.png">
+  <meta property="og:url" content="https://habi.co.id">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+  <!-- Google Fonts: Space Grotesk -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Swiper 11 CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/swiper@11/swiper-bundle.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- ============================================
+       1. NAV
+       ============================================ -->
+  <nav id="main-nav" class="nav">
+    <div class="container nav__inner">
+      <a href="#hero" class="nav__logo">
+        <img src="images/logo.png" alt="Habi Herbal Alam" width="120" height="40">
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#untuk-siapa">Manfaat</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#komposisi">Komposisi</a></li>
+        <li><a href="#cara-pakai">Cara Pakai</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+
+      <a href="#beli" class="btn btn--primary btn--nav">Beli Sekarang</a>
+
+      <button class="nav__hamburger" id="nav-hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Overlay -->
+    <div class="nav__overlay" id="nav-overlay">
+      <button class="nav__overlay-close" aria-label="Tutup menu">&times;</button>
+      <ul class="nav__overlay-links">
+        <li><a href="#untuk-siapa">Manfaat</a></li>
+        <li><a href="#produk">Produk</a></li>
+        <li><a href="#komposisi">Komposisi</a></li>
+        <li><a href="#cara-pakai">Cara Pakai</a></li>
+        <li><a href="#testimoni">Testimoni</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#beli" class="btn btn--primary">Beli Sekarang</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       2. HERO
+       ============================================ -->
+  <section id="hero" class="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1>Tetes Herbal untuk<br>Seluruh Keluarga</h1>
+        <p class="hero__subtitle">Kombinasi habbatussauda &amp; zaitun extra virgin dalam format tetes yang mudah dikonsumsi. Membantu memelihara daya tahan tubuh dan meredakan batuk untuk dewasa &amp; anak.</p>
+        <div class="hero__trust">
+          <span>🌿 100% Herbal Alam</span>
+          <span>☪ Halal MUI</span>
+          <span>✓ BPOM Terdaftar</span>
+        </div>
+        <p class="hero__price">Mulai <strong>Rp {{HARGA_1_BOTOL}}</strong></p>
+        <div class="hero__ctas">
+          <a href="#beli" class="btn btn--primary btn--lg">Beli Sekarang</a>
+          <a href="#produk" class="btn btn--secondary btn--lg">Lihat Produk</a>
+        </div>
+      </div>
+      <div class="hero__image">
+        <img src="images/bottle-hero.png" alt="Habi Herbal Alam 30ml" width="400" height="600">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       3. TRUST BAR
+       ============================================ -->
+  <section id="trust-bar" class="trust-bar">
+    <div class="container trust-bar__inner">
+      <div class="trust-bar__item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 8c0-5-5-7-5-7S7 3 7 8c0 3 2 5 5 9 3-4 5-6 5-9z"/><path d="M12 17v5"/><path d="M8 21h8"/></svg>
+        <span>100% Herbal Alam</span>
+      </div>
+      <div class="trust-bar__item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a9.4 9.4 0 0 0 0 20 9.4 9.4 0 0 0 0-20z"/><path d="M15 9a5 5 0 1 1-6 8"/></svg>
+        <span>Halal MUI</span>
+      </div>
+      <div class="trust-bar__item">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2l3 6h6l-5 4 2 7-6-4-6 4 2-7-5-4h6z"/><path d="M9 17l-1 5h8l-1-5"/></svg>
+        <span>BPOM Terdaftar</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       4. UNTUK SIAPA
+       ============================================ -->
+  <section id="untuk-siapa" class="section">
+    <div class="container">
+      <h2 class="section__title">Untuk Siapa Habi?</h2>
+      <p class="section__subtitle">Habi cocok untuk seluruh anggota keluarga yang ingin menjaga kesehatan secara alami.</p>
+
+      <div class="audience-grid">
+        <div class="audience-card" tabindex="0" role="button">
+          <span class="audience-card__icon">💪</span>
+          <h3 class="audience-card__title">Butuh Stamina Lebih</h3>
+          <p class="audience-card__desc">Untuk Anda yang aktif dan butuh energi ekstra setiap hari.</p>
+        </div>
+
+        <div class="audience-card" tabindex="0" role="button">
+          <span class="audience-card__icon">✈️</span>
+          <h3 class="audience-card__title">Sering Bepergian</h3>
+          <p class="audience-card__desc">Jaga daya tahan tubuh saat mobilitas tinggi dan perubahan cuaca.</p>
+        </div>
+
+        <div class="audience-card" tabindex="0" role="button">
+          <span class="audience-card__icon">🧒</span>
+          <h3 class="audience-card__title">Anak Rentan Batuk Pilek</h3>
+          <p class="audience-card__desc">Format tetes mudah dicampur madu, cocok untuk anak usia 2 tahun ke atas.</p>
+        </div>
+
+        <div class="audience-card" tabindex="0" role="button">
+          <span class="audience-card__icon">🏭</span>
+          <h3 class="audience-card__title">Terpapar Polusi</h3>
+          <p class="audience-card__desc">Bantu lindungi saluran pernapasan dari paparan polusi sehari-hari.</p>
+        </div>
+
+        <div class="audience-card" tabindex="0" role="button">
+          <span class="audience-card__icon">🗣️</span>
+          <h3 class="audience-card__title">Tenggorokan Tidak Nyaman</h3>
+          <p class="audience-card__desc">Meredakan rasa tidak nyaman di tenggorokan secara alami.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       5. KENAPA HABI
+       ============================================ -->
+  <section id="kenapa-habi" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Kenapa Habi?</h2>
+      <p class="section__subtitle">Bukan sekadar habbatussauda biasa.</p>
+
+      <div class="comparison">
+        <div class="comparison__header">
+          <div class="comparison__label"></div>
+          <div class="comparison__col-head comparison__col-head--habi">Habi Herbal Alam</div>
+          <div class="comparison__col-head comparison__col-head--other">Produk Lain</div>
+        </div>
+
+        <div class="comparison__row">
+          <div class="comparison__label">Komposisi</div>
+          <div class="comparison__col comparison__col--habi">Habbatussauda + Zaitun Extra Virgin</div>
+          <div class="comparison__col comparison__col--other">Minyak tunggal / kapsul</div>
+        </div>
+
+        <div class="comparison__row">
+          <div class="comparison__label">Standar</div>
+          <div class="comparison__col comparison__col--habi">Terdaftar BPOM</div>
+          <div class="comparison__col comparison__col--other">Belum tentu terdaftar</div>
+        </div>
+
+        <div class="comparison__row">
+          <div class="comparison__label">Format</div>
+          <div class="comparison__col comparison__col--habi">Tetes — mudah untuk anak, bisa dicampur madu</div>
+          <div class="comparison__col comparison__col--other">Kapsul — sulit untuk anak</div>
+        </div>
+
+        <div class="comparison__row">
+          <div class="comparison__label">Produksi</div>
+          <div class="comparison__col comparison__col--habi">Diproduksi lokal, Bekasi</div>
+          <div class="comparison__col comparison__col--other">Tidak jelas asal produksi</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       6. PRODUK & HARGA
+       ============================================ -->
+  <section id="produk" class="section">
+    <div class="container">
+      <h2 class="section__title">Pilih Paket Habi Anda</h2>
+      <p class="section__subtitle">Semua paket termasuk Habi Herbal Alam 30 ml per botol.</p>
+
+      <div class="pricing-cards">
+        <!-- Card 1 -->
+        <div class="pricing-card">
+          <h3 class="pricing-card__title">1 Botol</h3>
+          <p class="pricing-card__label">Coba Dulu</p>
+          <div class="pricing-card__image">
+            <img src="images/bottle-hero.png" alt="Habi Herbal Alam 1 Botol" width="120" height="180" loading="lazy">
+          </div>
+          <p class="pricing-card__qty">Isi 30 ml</p>
+          <p class="pricing-card__price">Rp {{HARGA_1}}</p>
+          <a href="#beli" class="btn btn--primary" data-bundle="1" onclick="if(typeof fbq==='function')fbq('track','AddToCart',{content_name:'Habi 1 Botol'})">Beli Sekarang</a>
+        </div>
+
+        <!-- Card 2 — Popular -->
+        <div class="pricing-card pricing-card--popular">
+          <span class="pricing-card__badge">Paling Populer</span>
+          <h3 class="pricing-card__title">3 Botol</h3>
+          <p class="pricing-card__label">Stok 1 Bulan Keluarga</p>
+          <div class="pricing-card__image">
+            <img src="images/bottle-hero.png" alt="Habi Herbal Alam 3 Botol" width="120" height="180" loading="lazy">
+          </div>
+          <p class="pricing-card__qty">Isi 30 ml × 3</p>
+          <p class="pricing-card__price">Rp {{HARGA_3}}</p>
+          <span class="pricing-card__savings">Hemat Rp {{SELISIH_3}}</span>
+          <a href="#beli" class="btn btn--primary" data-bundle="3" onclick="if(typeof fbq==='function')fbq('track','AddToCart',{content_name:'Habi 3 Botol'})">Beli Sekarang</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="pricing-card">
+          <h3 class="pricing-card__title">6 Botol</h3>
+          <p class="pricing-card__label">Hemat Maksimal</p>
+          <div class="pricing-card__image">
+            <img src="images/bottle-hero.png" alt="Habi Herbal Alam 6 Botol" width="120" height="180" loading="lazy">
+          </div>
+          <p class="pricing-card__qty">Isi 30 ml × 6</p>
+          <p class="pricing-card__price">Rp {{HARGA_6}}</p>
+          <span class="pricing-card__savings">Hemat Rp {{SELISIH_6}}</span>
+          <span class="pricing-card__bonus">Gratis Ongkir</span>
+          <a href="#beli" class="btn btn--primary" data-bundle="6" onclick="if(typeof fbq==='function')fbq('track','AddToCart',{content_name:'Habi 6 Botol'})">Beli Sekarang</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       7. KOMPOSISI
+       ============================================ -->
+  <section id="komposisi" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Komposisi Alami</h2>
+
+      <div class="ingredient-grid">
+        <div class="ingredient-card">
+          <h3 class="ingredient-card__title">Habbatussauda (Jintan Hitam)</h3>
+          <button class="ingredient-card__toggle" aria-expanded="false">Selengkapnya</button>
+          <div class="ingredient-card__detail">
+            <p>Mengandung thymoquinone, senyawa aktif yang membantu memelihara daya tahan tubuh. Dikenal dalam tradisi pengobatan herbal selama berabad-abad.</p>
+          </div>
+        </div>
+
+        <div class="ingredient-card">
+          <h3 class="ingredient-card__title">Zaitun Extra Virgin</h3>
+          <button class="ingredient-card__toggle" aria-expanded="false">Selengkapnya</button>
+          <div class="ingredient-card__detail">
+            <p>Kaya antioksidan dan asam lemak esensial. Membantu mendukung kesehatan secara menyeluruh dan meningkatkan penyerapan nutrisi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       8. CARA PAKAI
+       ============================================ -->
+  <section id="cara-pakai" class="section">
+    <div class="container">
+      <h2 class="section__title">Cara Pakai</h2>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <span class="step-card__number">1</span>
+          <div class="step-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2v6"/><path d="M9 8h6"/><path d="M10 8c0 0-2 4-2 10h8c0-6-2-10-2-10"/></svg>
+          </div>
+          <h3 class="step-card__title">Teteskan Sesuai Dosis</h3>
+          <p class="step-card__desc">Dewasa: 5 ml, 3× sehari. Anak 2+ tahun: 2,5 ml, 3× sehari.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-card__number">2</span>
+          <div class="step-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 14c0 0 2-2 5-2s5 2 5 2"/><path d="M8 12V2"/><path d="M16 18h6"/><path d="M19 15v6"/></svg>
+          </div>
+          <h3 class="step-card__title">Langsung atau Campur Madu</h3>
+          <p class="step-card__desc">Bisa langsung diteteskan ke mulut atau dicampur dengan 1 sendok makan madu murni.</p>
+        </div>
+
+        <div class="step-card">
+          <span class="step-card__number">3</span>
+          <div class="step-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><path d="M8 14h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 18h.01"/><path d="M12 18h.01"/></svg>
+          </div>
+          <h3 class="step-card__title">Rutin Setiap Hari</h3>
+          <p class="step-card__desc">Konsumsi secara rutin untuk hasil yang optimal.</p>
+        </div>
+      </div>
+
+      <div class="step-note">
+        ⚠️ Anak di bawah 2 tahun: konsultasikan ke dokter. Simpan di suhu ruang (di bawah 30°C), hindari sinar matahari langsung.
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       9. TESTIMONI
+       ============================================ -->
+  <section id="testimoni" class="section section--alt">
+    <div class="container">
+      <h2 class="section__title">Apa Kata Mereka?</h2>
+
+      <div class="swiper testimoni-swiper">
+        <div class="swiper-wrapper">
+          <!-- Slide 1 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar" aria-hidden="true"></div>
+              <p class="testimonial-card__name">Ibu Rina, Jakarta</p>
+              <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">⭐⭐⭐⭐⭐</div>
+              <blockquote class="testimonial-card__text">Sejak rutin minum Habi, badan terasa lebih fit dan jarang masuk angin. Anak-anak juga mau minum karena bisa dicampur madu.</blockquote>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar" aria-hidden="true"></div>
+              <p class="testimonial-card__name">Pak Andi, Bekasi</p>
+              <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">⭐⭐⭐⭐⭐</div>
+              <blockquote class="testimonial-card__text">Tenggorokan saya terasa lebih nyaman setelah konsumsi rutin. Praktis banget bentuk tetesnya.</blockquote>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar" aria-hidden="true"></div>
+              <p class="testimonial-card__name">Ibu Sari, Bandung</p>
+              <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">⭐⭐⭐⭐⭐</div>
+              <blockquote class="testimonial-card__text">Saya suka karena 100% herbal dan sudah terdaftar BPOM. Tenang memberikan ke anak-anak.</blockquote>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar" aria-hidden="true"></div>
+              <p class="testimonial-card__name">Ibu Dewi, Surabaya</p>
+              <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">⭐⭐⭐⭐⭐</div>
+              <blockquote class="testimonial-card__text">Pengiriman cepat dan kemasannya rapi. Anak saya yang umur 3 tahun mau minum karena dicampur madu.</blockquote>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="swiper-slide">
+            <div class="testimonial-card">
+              <div class="testimonial-card__avatar" aria-hidden="true"></div>
+              <p class="testimonial-card__name">Pak Budi, Tangerang</p>
+              <div class="testimonial-card__stars" aria-label="5 dari 5 bintang">⭐⭐⭐⭐⭐</div>
+              <blockquote class="testimonial-card__text">Sudah 2 bulan konsumsi, badan terasa lebih segar. Cocok untuk yang sering bepergian seperti saya.</blockquote>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <p class="testimoni__disclaimer">* Hasil dapat bervariasi pada setiap individu.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       10. LEGALITAS
+       ============================================ -->
+  <section id="legalitas" class="section">
+    <div class="container">
+      <h2 class="section__title">Legalitas &amp; Sertifikasi</h2>
+
+      <div class="legal-grid">
+        <div class="legal-item">
+          <img src="images/badge-bpom.jpg" alt="BPOM Terdaftar" width="120" height="120" loading="lazy">
+          <p class="legal__label">BPOM Terdaftar</p>
+          <span class="legal__number">{{NOMOR_BPOM}}</span>
+        </div>
+
+        <div class="legal-item">
+          <img src="images/badge-halal.jpg" alt="Halal Indonesia" width="120" height="120" loading="lazy">
+          <p class="legal__label">Halal Indonesia</p>
+        </div>
+
+        <div class="legal-item">
+          <img src="images/badge-bbi.jpg" alt="Bangga Buatan Indonesia" width="120" height="120" loading="lazy">
+          <p class="legal__label">Bangga Buatan Indonesia</p>
+        </div>
+      </div>
+
+      <p class="legal__producer">Diproduksi oleh: PT Setunggal Syifa Semesta, Bekasi, Indonesia</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       11. BELI SEKARANG
+       ============================================ -->
+  <section id="beli" class="section section--cta">
+    <div class="container">
+      <h2 class="section__title">Dapatkan Habi Sekarang</h2>
+      <p class="section__subtitle">Pilih platform belanja favorit Anda.</p>
+
+      <div class="buy-grid">
+        <!-- Shopee -->
+        <a class="buy-btn" href="{{URL_SHOPEE}}&utm_source=website&utm_medium=landing&utm_campaign=habi_v2" target="_blank" rel="noopener" data-platform="shopee" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'Shopee'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2C9.8 2 8 3.8 8 6H5a1 1 0 0 0-1 1l-1 13a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2L20 7a1 1 0 0 0-1-1h-3c0-2.2-1.8-4-4-4zm0 2c1.1 0 2 .9 2 2h-4c0-1.1.9-2 2-2zm-5 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm10 0a1 1 0 1 1 0-2 1 1 0 0 1 0 2z"/></svg>
+          <span>Shopee</span>
+        </a>
+
+        <!-- Tokopedia -->
+        <a class="buy-btn" href="{{URL_TOKOPEDIA}}&utm_source=website&utm_medium=landing&utm_campaign=habi_v2" target="_blank" rel="noopener" data-platform="tokopedia" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'Tokopedia'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4" fill="white"/><rect x="11" y="2" width="2" height="4" fill="white"/></svg>
+          <span>Tokopedia</span>
+        </a>
+
+        <!-- TikTok Shop -->
+        <a class="buy-btn" href="{{URL_TIKTOK}}&utm_source=website&utm_medium=landing&utm_campaign=habi_v2" target="_blank" rel="noopener" data-platform="tiktok" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'TikTok Shop'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.3 5.7a4.5 4.5 0 0 1-3-1.3A4.5 4.5 0 0 1 15 1h-3v14a3 3 0 1 1-2-2.8V9a6 6 0 1 0 5 5.9V9.5a7.5 7.5 0 0 0 4.3 1.3V7.5a4.5 4.5 0 0 1-1.3-.2 4.5 4.5 0 0 1 1.3-1.6z"/></svg>
+          <span>TikTok Shop</span>
+        </a>
+
+        <!-- WhatsApp / COD -->
+        <a class="buy-btn" href="https://wa.me/6285975313278?text=Halo%20Habi%2C%20saya%20mau%20pesan%20Habi%20Herbal%20Alam%2030%20ml.%20Info%20harga%20dan%20pengiriman%20ya." target="_blank" rel="noopener" data-platform="whatsapp" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'WhatsApp COD'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.5 14.4l-2-1a1 1 0 0 0-1 .1l-.7.7a.8.8 0 0 1-1 .1 10 10 0 0 1-3.1-3.1.8.8 0 0 1 .1-1l.7-.7a1 1 0 0 0 .1-1l-1-2a1 1 0 0 0-.9-.5h-.1a2 2 0 0 0-2 1.5 5 5 0 0 0 .7 3.4 13 13 0 0 0 5.6 5.6 5 5 0 0 0 3.4.7 2 2 0 0 0 1.5-2v-.1a1 1 0 0 0-.3-.6z"/><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.3 4.3-1.3A10 10 0 1 0 12 2z"/></svg>
+          <span>WhatsApp / COD</span>
+        </a>
+
+        <!-- Beli Langsung -->
+        <a class="buy-btn" href="{{URL_CHECKOUT}}&utm_source=website&utm_medium=landing&utm_campaign=habi_v2" target="_blank" rel="noopener" data-platform="direct" onclick="if(typeof fbq==='function')fbq('track','InitiateCheckout',{content_name:'Beli Langsung'})">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.7 13.4a2 2 0 0 0 2 1.6h9.7a2 2 0 0 0 2-1.6L23 6H6"/></svg>
+          <span>Beli Langsung</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       12. GARANSI
+       ============================================ -->
+  <section id="garansi" class="section section--alt">
+    <div class="container garansi__inner">
+      <div class="garansi__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg>
+      </div>
+      <h2 class="section__title">Garansi Kepuasan</h2>
+      <p>Kemasan rusak atau produk tidak sesuai? Ganti baru atau uang kembali, cukup hubungi CS kami via WhatsApp.</p>
+    </div>
+  </section>
+
+  <!-- ============================================
+       13. FAQ
+       ============================================ -->
+  <section id="faq" class="section">
+    <div class="container">
+      <h2 class="section__title">Pertanyaan Umum</h2>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">Berapa lama efek Habi terasa?</button>
+          <div class="faq-item__answer">
+            <p>Setiap individu berbeda. Umumnya, konsumsi rutin selama 2–4 minggu mulai memberikan manfaat yang terasa seperti badan lebih fit dan tidak mudah masuk angin.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">Apakah aman untuk anak?</button>
+          <div class="faq-item__answer">
+            <p>Habi aman untuk anak usia 2 tahun ke atas. Bisa dicampur dengan madu untuk rasa yang lebih disukai anak. Untuk anak di bawah 2 tahun, konsultasikan ke dokter.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">Apakah bisa dikonsumsi bersamaan dengan obat?</button>
+          <div class="faq-item__answer">
+            <p>Sebaiknya beri jeda 1–2 jam antara konsumsi Habi dengan obat lain. Jika sedang dalam pengobatan rutin, konsultasikan dengan dokter Anda.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">Apakah ada efek samping?</button>
+          <div class="faq-item__answer">
+            <p>Habi terbuat dari bahan alami dan umumnya tidak menimbulkan efek samping. Hentikan pemakaian jika terjadi reaksi alergi dan konsultasikan ke dokter.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">Apakah perlu dikonsumsi terus-menerus?</button>
+          <div class="faq-item__answer">
+            <p>Habi adalah suplemen herbal yang bisa dikonsumsi sebagai bagian dari gaya hidup sehat sehari-hari. Tidak ada efek ketergantungan.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">Bagaimana cara menyimpan Habi?</button>
+          <div class="faq-item__answer">
+            <p>Simpan di suhu ruang (di bawah 30°C), hindari sinar matahari langsung. Tidak perlu disimpan di kulkas.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-item__question" aria-expanded="false">Bagaimana jika produk rusak saat diterima?</button>
+          <div class="faq-item__answer">
+            <p>Kami memberikan garansi ganti baru atau uang kembali jika produk diterima dalam kondisi rusak. Cukup hubungi CS kami via WhatsApp.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       14. FOOTER
+       ============================================ -->
+  <footer id="footer" class="footer">
+    <div class="container footer__inner">
+      <div class="footer__col">
+        <a href="#hero" class="footer__logo">
+          <img src="images/logo.png" alt="Habi Herbal Alam" width="120" height="40" loading="lazy">
+        </a>
+        <p class="footer__desc">Habi Herbal Alam — tetes herbal habbatussauda &amp; zaitun extra virgin untuk kesehatan keluarga Indonesia.</p>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Produk</h4>
+        <ul class="footer__links">
+          <li><a href="#untuk-siapa">Manfaat</a></li>
+          <li><a href="#komposisi">Komposisi</a></li>
+          <li><a href="#cara-pakai">Cara Pakai</a></li>
+          <li><a href="#testimoni">Testimoni</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Informasi</h4>
+        <ul class="footer__links">
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#legalitas">Legalitas</a></li>
+          <li><a href="#garansi">Garansi</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h4 class="footer__heading">Hubungi Kami</h4>
+        <p class="footer__contact">
+          <a href="https://wa.me/6285975313278" target="_blank" rel="noopener">WA: 0859-7531-3278</a>
+        </p>
+        <p class="footer__hours">Senin–Sabtu, 08.00–20.00 WIB</p>
+        <div class="footer__socials">
+          <!-- Instagram -->
+          <a href="#" aria-label="Instagram" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <!-- TikTok -->
+          <a href="#" aria-label="TikTok" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M19.3 5.7a4.5 4.5 0 0 1-3-1.3A4.5 4.5 0 0 1 15 1h-3v14a3 3 0 1 1-2-2.8V9a6 6 0 1 0 5 5.9V9.5a7.5 7.5 0 0 0 4.3 1.3V7.5a4.5 4.5 0 0 1-1.3-.2 4.5 4.5 0 0 1 1.3-1.6z"/></svg>
+          </a>
+          <!-- YouTube -->
+          <a href="#" aria-label="YouTube" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22.5 6.4a2.8 2.8 0 0 0-2-2C18.9 4 12 4 12 4s-6.9 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1 12a29 29 0 0 0 .5 5.6 2.8 2.8 0 0 0 2 2c1.6.4 8.5.4 8.5.4s6.9 0 8.5-.4a2.8 2.8 0 0 0 2-2A29 29 0 0 0 23 12a29 29 0 0 0-.5-5.6z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer__bottom">
+      <div class="container">
+        <p>© 2026 Habi Herbal Alam · MUSA Group. Seluruh hak cipta dilindungi.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       FLOATING ELEMENTS
+       ============================================ -->
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/6285975313278?text=Halo%20Habi%2C%20saya%20mau%20bertanya%20tentang%20produk%20Habi%20Herbal%20Alam." class="wa-float" id="wa-float" target="_blank" rel="noopener" aria-label="Chat WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="white" aria-hidden="true"><path d="M17.5 14.4l-2-1a1 1 0 0 0-1 .1l-.7.7a.8.8 0 0 1-1 .1 10 10 0 0 1-3.1-3.1.8.8 0 0 1 .1-1l.7-.7a1 1 0 0 0 .1-1l-1-2a1 1 0 0 0-.9-.5h-.1a2 2 0 0 0-2 1.5 5 5 0 0 0 .7 3.4 13 13 0 0 0 5.6 5.6 5 5 0 0 0 3.4.7 2 2 0 0 0 1.5-2v-.1a1 1 0 0 0-.3-.6z"/><path d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.3 4.3-1.3A10 10 0 1 0 12 2z"/></svg>
+  </a>
+
+  <!-- Mobile Sticky CTA Bar -->
+  <div class="mobile-cta" id="mobile-cta">
+    <span class="mobile-cta__price">Mulai Rp {{HARGA_1_BOTOL}}</span>
+    <a href="#beli" class="btn btn--primary">Beli Sekarang</a>
+  </div>
+
+  <!-- ============================================
+       JSON-LD STRUCTURED DATA
+       ============================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Habi Herbal Alam",
+    "image": "https://habi.co.id/images/bottle-hero.png",
+    "description": "Tetes herbal kombinasi habbatussauda dan zaitun extra virgin 30 ml",
+    "brand": {
+      "@type": "Brand",
+      "name": "Habi"
+    },
+    "manufacturer": {
+      "@type": "Organization",
+      "name": "PT Setunggal Syifa Semesta"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "{{HARGA_1}}",
+      "priceCurrency": "IDR",
+      "availability": "https://schema.org/InStock",
+      "url": "https://habi.co.id/#beli"
+    }
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Berapa lama efek Habi terasa?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Setiap individu berbeda. Umumnya, konsumsi rutin selama 2–4 minggu mulai memberikan manfaat yang terasa seperti badan lebih fit dan tidak mudah masuk angin."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah aman untuk anak?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Habi aman untuk anak usia 2 tahun ke atas. Bisa dicampur dengan madu untuk rasa yang lebih disukai anak. Untuk anak di bawah 2 tahun, konsultasikan ke dokter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah bisa dikonsumsi bersamaan dengan obat?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sebaiknya beri jeda 1–2 jam antara konsumsi Habi dengan obat lain. Jika sedang dalam pengobatan rutin, konsultasikan dengan dokter Anda."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah ada efek samping?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Habi terbuat dari bahan alami dan umumnya tidak menimbulkan efek samping. Hentikan pemakaian jika terjadi reaksi alergi dan konsultasikan ke dokter."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Apakah perlu dikonsumsi terus-menerus?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Habi adalah suplemen herbal yang bisa dikonsumsi sebagai bagian dari gaya hidup sehat sehari-hari. Tidak ada efek ketergantungan."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana cara menyimpan Habi?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Simpan di suhu ruang (di bawah 30°C), hindari sinar matahari langsung. Tidak perlu disimpan di kulkas."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Bagaimana jika produk rusak saat diterima?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Kami memberikan garansi ganti baru atau uang kembali jika produk diterima dalam kondisi rusak. Cukup hubungi CS kami via WhatsApp."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Swiper 11 JS -->
+  <script src="https://unpkg.com/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Main JS -->
+  <script src="js/main.js"></script>
+</body>
+</html>
